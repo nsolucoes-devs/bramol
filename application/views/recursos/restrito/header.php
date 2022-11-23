@@ -277,7 +277,7 @@
                 <div class="row" <?php if($mobile_header == 1){echo "style='display: none'";} ?>>
                     <div class="col-md-4" style="margin-top: 5px">
                         <a href="<?php echo base_url('106a6c241b8797f52e1e77317b96a201') ?>" class="logo" style="margin-top: 2%">
-                            <img class="img-logo" src="<?php echo base_url('imagens/site/logo_deitada_azul.png') ?>">
+                            <img class="img-logo" src="<?php echo base_url('imagens/site/02.png') ?>">
                         </a>
                     </div>
                     <div class="col-md-8 text-right" style="margin: 23px 0">

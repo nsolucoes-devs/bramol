@@ -11,7 +11,7 @@
 
 
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="<?php echo base_url() ?>recursos/img/favicon.png" />
+    <link rel="icon" type="image/png" href="<?php echo base_url() ?>imagens/site/favicon.png" />
     <!--===============================================================================================-->
     <link href="<?php echo base_url("recursos/lib/bootstrap/bootstrap.min.css") ?>" rel="stylesheet" type="text/css">
     <!--===============================================================================================-->
@@ -456,7 +456,10 @@
             width: 150px;
             height: auto;
             z-index: 1;
-            margin: 10% 10% 15%;
+            /* margin: 10% 10% 15%; */
+            margin-left: 2%;
+            margin-right: 6%;
+            margin-top: 4%;
         }
 
         .menu-transparente {
@@ -988,7 +991,7 @@ if ($this->session->userdata('cliente_nome')) {
                                 <!-- div do menu -->
                                 <div class="col-md-2 text-center">
                                     <a href="<?php echo base_url('') ?>">
-                                        <img class="logo-img" style="z-index: 40;" src="<?php echo base_url('imagens/site/logo/01.png') ?>" alt="logo" title="DataCom Notebook e Informática">
+                                        <img class="logo-img" style="z-index: 40;" src="<?php echo base_url('imagens/site/logo/01.png') ?>" alt="logo" title="Bramol">
                                     </a>
                                 </div>
 
@@ -1081,7 +1084,7 @@ if ($this->session->userdata('cliente_nome')) {
                                     <div class="d-block mobile_menu">
                                         <div class="row" style="margin-bottom: -5%;">
                                             <div class="col-6 text-center">
-                                                <a class="mobile-link-logo-pos" href="<?php echo base_url('') ?>"><img class="mobile-logo" src="<?php echo base_url('imagens/site/logo.png') ?>" alt="logo" title="DataCom Notebook e Informática"></a>
+                                                <a class="mobile-link-logo-pos" href="<?php echo base_url('') ?>"><img class="mobile-logo" src="<?php echo base_url('imagens/site/logo.png') ?>" alt="logo" title="Bramol"></a>
                                             </div>
 
                                             <div class="col-6 text-right usuario-mobile" style="position: relative; right: 0; top: 0; padding: 5% 10%;">
@@ -1101,13 +1104,13 @@ if ($this->session->userdata('cliente_nome')) {
 
                                         <div class="row">
                                             <div class="col-2 botaoNav">
-                                                <button class="navbar-toggler d-block" style="width: 60%; height: 50%; margin-top: 80%; margin-left: 30%;" type="button" id="navToggleMobile">
+                                                <button class="navbar-toggler d-block" style="width: 70%; height: 50%; margin-top: 70%; margin-left: 30%; font-size: 30px;" type="button" id="navToggleMobile">
                                                     <i class="fas fa-bars" onclick="mySideBar()" style="color: #EC9706; position: relative; left: -9px;"></i>
                                                 </button>
                                             </div>
                                             <div class="col-10 search-div">
                                                 <form id="buscador" action="<?php echo base_url('servico/buscaServicos'); ?>" method="post">
-                                                    <div class="text-left input-group" style="margin-top: 9%; position: relative; left: -2%;">
+                                                    <div class="text-left input-group" style="margin-top: 10%; position: relative; left: 9%; width: 55%;">
                                                         <input id="search_produto" name="busca" type="text" class="input-lg form-control search-input" placeholder="Busque aqui" aria-label="Recipient's username" aria-describedby="basic-addon2">
                                                         <div onclick="searchTrigger()" style="position: relative;left: -12px;border-radius: 10px;" class="input-group-append search-icon-div">
                                                             <!-- <span style="background-color: #EC9706; border-color: #EC9706; border-radius: 10px;" class="input-group-text search-icon-i" id="basic-addon2">
@@ -1158,7 +1161,7 @@ if ($this->session->userdata('cliente_nome')) {
                     </div>
                 </nav>
             <?php } else { ?>
-                <nav id="navMobile" class="navbar navbar-expand-lg fixed-top shadow navbar-offcanvas" style="max-width: 55%; background-color: #082A3C; top: 124px; z-index: 100; display: none; height: 100%; overflow-y: scroll;">
+                <nav id="navMobile" class="navbar navbar-expand-lg fixed-top shadow navbar-offcanvas" style="max-width: 55%; background-color: #bd3034; top: 124px; z-index: 100; display: none; height: 100%; overflow-y: scroll;">
                     <div class="navbar-collapse offcanvas-collapse">
                         <div class="my-2">
                             <?php if ($this->session->userdata('cliente_logado')) { ?>

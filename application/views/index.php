@@ -852,21 +852,19 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
 
             <?php if ($mobile_view == 1) { ?>
 
-                <!-- Slider start -->
+                <!-- Carousel Mobile start -->
                 <section id="carousel-mobile" style="width: 100%;">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active" style="background: url(<?php echo base_url() ?>imagens/site/banner_principal1.png);">
                                 <a href="<?php echo $site['btn_banner1']; ?>">
-                                    <img class="imgvideo" src="<?php echo base_url() ?>imagens/site/imagem1.png" style="margin-bottom: 0;width: auto;height: 60%;top: 50%;left: 20%;position: absolute;" alt="Image">
-                                    <div class="carousel-caption">
+                                                                        <div class="carousel-caption">
                                         <h3 style="z-index: 1;"><?= $site['text_banner1']; ?></h3>
                                     </div>
                                 </a>
                             </div>
                             <div class="carousel-item" style="background: url(<?php echo base_url() ?>imagens/site/banner_principal2.png);">
                                 <a href="<?php echo $site['btn_banner2']; ?>">
-                                    <img class="imgvideo" src="<?php echo base_url() ?>imagens/site/imagem2.png" style="margin-bottom: 0;width: auto;height: 60%;top: 40%;left: 50%;position: absolute;" alt="Image">
                                     <div class="carousel-caption">
                                         <h3 style="z-index: 1;"><?= $site['text_banner2']; ?></h3>
                                     </div>
@@ -874,7 +872,6 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
                             </div>
                             <div class="carousel-item" style="background: url(<?php echo base_url() ?>imagens/site/banner_principal3.png);">
                                 <a href="<?php echo $site['btn_banner3']; ?>">
-                                    <img class="imgvideo" src="<?php echo base_url() ?>imagens/site/imagem3.png" style="margin-bottom: 0;width: auto;height: 60%;top: 40%;left: 50%;position: absolute;" alt="Image">
                                     <div class="carousel-caption">
                                         <h3 style="z-index: 1;"><?= $site['text_banner3']; ?></h3>
                                     </div>
@@ -891,7 +888,82 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
                         </a>
                     </div>
                 </section>
-                <!--/ Slider end -->
+                <!--/ Carousel Mobile end -->
+
+                <div class="container">
+                    <div class="row my-5 justify-content-center" style="width: 140%; margin-left: -20%;">
+                        <div class="col-3">
+                            <img class="img-fluid" src="imagens/site/acessorios.png">
+                        </div>
+                        <div class="col-3">
+                            <img class="img-fluid" src="imagens/site/texturas.png">
+                        </div>
+                        <div class="col-3">
+                            <img class="img-fluid" src="imagens/site/tintas.png">
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- Produtos novos -->
+                <div id="novidades" class="section-content container" style="<?php if ($mobile_view == 0) { echo "margin-bottom: 20px;"; } ?> background: #ffffff; width: 80%;">
+                    <div class="row" style="margin-top:2%">
+                        <?php foreach ($produtos as $p) {
+                            $aux_nome = explode(' ', $p['servico_nome'], 2) ?>
+                            <div class="col-6 col-md-4 col-xs-3 col-sm-4 col-lg-3 form-group">
+                                <div class="card zoom card-relacionados" style="border-radius: 7px; height: 100%;">
+                                    <div class="card-body" style="border-bottom: 7px solid #EC9706; border-radius: 7px;">
+                                        <a href="<?php echo base_url('e9b8ed001f1726b0385dcfec2dbe2ea1/') . $p['servico_id'] ?>">
+                                            <div class="row">
+                                                <div class="justify-content-center col-md-12" style="height: 6rem">
+                                                    <img class="img-fluid img-square" src="<?php echo base_url($p['servico_imagem']) ?>">
+                                                </div>
+
+                                                <div class="col-md-12 text-center">
+                                                    <p class="text-center stars" style="font-size: 12px;">
+                                                        <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
+                                                        <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
+                                                        <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
+                                                        <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
+                                                        <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
+                                                    </p>
+
+                                                    <div class="text-center" style="height: 1.5rem">
+                                                        <p class="servico-titulo" style="margin-top: 7%; font-weight: 600; color: #0b193c;"><?= ucfirst(mb_strtolower($p['servico_nome'])) ?></p>
+                                                    </div>
+                                                    <?php if ($p['produto_promocao']) { ?>
+                                                        <div class="col-12 col-md-12 text-center p-0">
+                                                            <p class="text-muted p-0 m-0"><strike>R$ <?php echo number_format($p['servico_valor'], 2, ',', '.') ?></strike></p>
+                                                            <button class="btn btn-secondary">
+                                                                R$ <?php echo number_format($p['produto_promocao'], 2, ',', '.') ?>
+                                                            </button>
+                                                            <?php if ($p['servico_parcelamento'] == 0) { ?>
+                                                                <p class="text-center text-muted">
+                                                                    <?= $p['servico_qtd_parcela'] ?>
+                                                                </p>
+                                                            <?php } ?>
+                                                        </div>
+                                                    <?php } else { ?>
+                                                        <div class="col-12 col-md-12 text-center mt-4 p-0">
+                                                            <button class="btn btn-secondary">
+                                                                R$ <?php echo number_format($p['servico_valor'], 2, ',', '.') ?>
+                                                            </button>
+                                                            <?php if ($p['servico_parcelamento'] == 0) { ?>
+                                                                <p class="text-center text-muted">
+                                                                    <?= $p['servico_qtd_parcela'] ?>
+                                                                </p>
+                                                            <?php } ?>
+                                                        </div>
+                                                    <?php } ?>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
 
             <?php } ?>
 
@@ -899,59 +971,17 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
 
 
                 <!-- Carousel Start -->
-                <div class="container-fluid p-0">
+                <div class="container-fluid p-0 my-5">
                     <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner" style="background-color: black;">
-                            <div class="carousel-item active" data-bs-interval="4000" style="background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(<?php echo base_url() ?>imagens/site/banner_principal1.png); height: 450px; background-repeat: no-repeat; background-size: cover;">
-                                <div class="carousel-caption d-flex flex-column align-items-left justify-content-center text-left">
-                                    <div class="p-3" style="max-width: 100%;">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="text-left wow fadeInUp " data-wow-delay="0.1s" style="margin-left: 20% !important; margin-top: 70% !important">
-                                                    <h1 class="display-3 text-white mb-4 animated slideInDown"><?php echo $site['text_banner1']; ?></h1>
-                                                    <a class="btn btn-primary py-3 px-5 mt-2" style="margin-right: 5%; color: white;" href="<?php echo $site['btn_banner1']; ?>">Ver mais +</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <img class="imgvideo" src="<?php echo base_url() ?>imagens/site/imagem1.png" style="margin-bottom: 0;width: auto;height: 60%; top: 61%; left: 20%;position: absolute;" alt="Image">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="carousel-inner" style="">
+                            <div class="carousel-item active" style="background: url(<?php echo base_url() ?>imagens/site/banner_principal1.png); height: 600px; background-repeat: no-repeat; background-size: cover;">
+                                
                             </div>
-                            <div class="carousel-item" data-bs-interval="4000" style="background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(<?php echo base_url() ?>imagens/site/banner_principal2.png); height: 450px; background-repeat: no-repeat; background-size: cover;">
-                                <div class="carousel-caption d-flex flex-column align-items-left justify-content-center text-left">
-                                    <div class="p-3" style="max-width: 100%;">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="text-left wow fadeInUp " data-wow-delay="0.1s" style="margin-left: 20% !important; margin-top: 70% !important">
-                                                    <h1 class="display-3 text-white mb-4 animated slideInDown"><?php echo $site['text_banner2']; ?></h1>
-                                                    <a class="btn btn-primary py-3 px-5 mt-2" style="margin-right: 5%; color: white;" href="<?php echo $site['btn_banner2']; ?>">Ver mais +</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <img class="imgvideo" src="<?php echo base_url() ?>imagens/site/imagem2.png" style="margin-bottom: 0;width: auto;height: 60%; top: 61%; left: 20%;position: absolute;" alt="Image">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="carousel-item" style="background: url(<?php echo base_url() ?>imagens/site/banner_principal2.png); height: 600px; background-repeat: no-repeat; background-size: cover;">
+                                
                             </div>
-                            <div class="carousel-item" data-bs-interval="4000" style="background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(<?php echo base_url() ?>imagens/site/banner_principal3.png); height: 450px; background-repeat: no-repeat; background-size: cover;">
-                                <div class="carousel-caption d-flex flex-column align-items-left justify-content-center text-left">
-                                    <div class="p-3" style="max-width: 100%;">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="text-left wow fadeInUp " data-wow-delay="0.1s" style="margin-left: 20% !important; margin-top: 70% !important">
-                                                    <h1 class="display-3 text-white mb-4 animated slideInDown"><?php echo $site['text_banner3']; ?></h1>
-                                                    <a class="btn btn-primary py-3 px-5 mt-2" style="margin-right: 5%; color: white;" href="<?php echo $site['btn_banner3']; ?>">Ver mais +</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <img class="imgvideo" src="<?php echo base_url() ?>imagens/site/imagem3.png" style="margin-bottom: 0;width: auto;height: 60%; top: 61%; left: 20%;position: absolute;" alt="Image">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="carousel-item" style="background: url(<?php echo base_url() ?>imagens/site/banner_principal3.png); height: 600px; background-repeat: no-repeat; background-size: cover;">
+                                
                             </div>
                         </div>
                         <button class="left carousel-control-prev carousel-control" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
@@ -978,68 +1008,68 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
                     </div>
                 </div>
 
-            <?php } ?>
-            <!-- Produtos novos -->
-            <div id="novidades" class="section-content container" style="<?php if ($mobile_view == 0) {
-                                                                                echo "margin-bottom: 20px;";
-                                                                            } ?> background: #ffffff; width: 80%;">
-                <div class="row" style="margin-top:2%">
-                    <?php foreach ($produtos as $p) {
-                        $aux_nome = explode(' ', $p['servico_nome'], 2) ?>
-                        <div class="col-md-4 col-xs-6 col-sm-4 col-lg-3 form-group">
-                            <div class="card zoom card-relacionados" style="border-radius: 7px; height: 100%;">
-                                <div class="card-body" style="border-bottom: 7px solid #EC9706; border-radius: 7px;">
-                                    <a href="<?php echo base_url('e9b8ed001f1726b0385dcfec2dbe2ea1/') . $p['servico_id'] ?>">
-                                        <div class="row">
-                                            <div class="justify-content-center col-md-12 d-flex" style="height: 12rem">
-                                                <img class="img-fluid img-square" src="<?php echo base_url($p['servico_imagem']) ?>">
-                                            </div>
-
-                                            <div class="col-md-12 text-center">
-                                                <p class="text-center stars">
-                                                    <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
-                                                    <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
-                                                    <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
-                                                    <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
-                                                    <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
-                                                </p>
-
-                                                <div class="text-center" style="height: 3.5rem">
-                                                    <p class="servico-titulo" style="margin-top: 7%; font-weight: 600; color: #0b193c;"><?= ucfirst(mb_strtolower($p['servico_nome'])) ?></p>
+                <!-- Produtos novos -->
+                <div id="novidades" class="section-content container" style="<?php if ($mobile_view == 0) { echo "margin-bottom: 20px;"; } ?> background: #ffffff; width: 80%;">
+                    <div class="row" style="margin-top:2%">
+                        <?php foreach ($produtos as $p) {
+                            $aux_nome = explode(' ', $p['servico_nome'], 2) ?>
+                            <div class="col-6 col-md-4 col-xs-3 col-sm-4 col-lg-3 form-group">
+                                <div class="card zoom card-relacionados" style="border-radius: 7px; height: 100%;">
+                                    <div class="card-body" style="border-bottom: 7px solid #EC9706; border-radius: 7px;">
+                                        <a href="<?php echo base_url('e9b8ed001f1726b0385dcfec2dbe2ea1/') . $p['servico_id'] ?>">
+                                            <div class="row">
+                                                <div class="justify-content-center col-md-12" style="height: 11rem">
+                                                    <img class="img-fluid img-square" src="<?php echo base_url($p['servico_imagem']) ?>">
                                                 </div>
-                                                <?php if ($p['produto_promocao']) { ?>
-                                                    <div class="col-12 col-md-12 text-center">
-                                                        <p class="text-muted p-0 m-0"><strike>R$ <?php echo number_format($p['servico_valor'], 2, ',', '.') ?></strike></p>
-                                                        <button class="btn btn-secondary">
-                                                            R$ <?php echo number_format($p['produto_promocao'], 2, ',', '.') ?>
-                                                        </button>
-                                                        <?php if ($p['servico_parcelamento'] == 0) { ?>
-                                                            <p class="text-center text-muted">
-                                                                <?= $p['servico_qtd_parcela'] ?>
-                                                            </p>
-                                                        <?php } ?>
+
+                                                <div class="col-md-12 text-center">
+                                                    <p class="text-center stars" style="font-size: 12px;">
+                                                        <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
+                                                        <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
+                                                        <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
+                                                        <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
+                                                        <i style="color: gold" class="fa fa-star" aria-hidden="true"></i>
+                                                    </p>
+
+                                                    <div class="text-center" style="height: 1.5rem">
+                                                        <p class="servico-titulo" style="margin-top: 7%; font-weight: 600; color: #0b193c;"><?= ucfirst(mb_strtolower($p['servico_nome'])) ?></p>
                                                     </div>
-                                                <?php } else { ?>
-                                                    <div class="col-12 col-md-12 text-center mt-4">
-                                                        <button class="btn btn-secondary">
-                                                            R$ <?php echo number_format($p['servico_valor'], 2, ',', '.') ?>
-                                                        </button>
-                                                        <?php if ($p['servico_parcelamento'] == 0) { ?>
-                                                            <p class="text-center text-muted">
-                                                                <?= $p['servico_qtd_parcela'] ?>
-                                                            </p>
-                                                        <?php } ?>
-                                                    </div>
-                                                <?php } ?>
+                                                    <?php if ($p['produto_promocao']) { ?>
+                                                        <div class="col-12 col-md-12 text-center p-0">
+                                                            <p class="text-muted p-0 m-0"><strike>R$ <?php echo number_format($p['servico_valor'], 2, ',', '.') ?></strike></p>
+                                                            <button class="btn btn-secondary">
+                                                                R$ <?php echo number_format($p['produto_promocao'], 2, ',', '.') ?>
+                                                            </button>
+                                                            <?php if ($p['servico_parcelamento'] == 0) { ?>
+                                                                <p class="text-center text-muted">
+                                                                    <?= $p['servico_qtd_parcela'] ?>
+                                                                </p>
+                                                            <?php } ?>
+                                                        </div>
+                                                    <?php } else { ?>
+                                                        <div class="col-12 col-md-12 text-center mt-4 p-0">
+                                                            <button class="btn btn-secondary">
+                                                                R$ <?php echo number_format($p['servico_valor'], 2, ',', '.') ?>
+                                                            </button>
+                                                            <?php if ($p['servico_parcelamento'] == 0) { ?>
+                                                                <p class="text-center text-muted">
+                                                                    <?= $p['servico_qtd_parcela'] ?>
+                                                                </p>
+                                                            <?php } ?>
+                                                        </div>
+                                                    <?php } ?>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    <?php } ?>
+                        <?php } ?>
+                    </div>
                 </div>
-            </div>
+
+            <?php } ?>
+            
 </main>
 
 

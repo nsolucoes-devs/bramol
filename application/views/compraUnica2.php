@@ -28,7 +28,7 @@
             margin: 13% 4px 0 4px;
             min-height: 200px;
             border: 1px solid #e8e8e8;
-            border-bottom: 10px solid #0b193c;
+            border-bottom: 10px solid #bd3034;
         }
 
         .main-section {
@@ -600,7 +600,7 @@
                                                 <!--onclick="liberaCompra()"-->
                                             </div>
                                             <div class="col-12 form-group">
-                                                <button id="buttonFinalizar" onclick="finalizaCompra()" type="button" class="g-recaptcha btn btn-primary btn-block btn-lg mx-auto" data-sitekey="<?php echo $chave['chave_site'] ?>" disabled>
+                                                <button id="buttonFinalizar" onclick="finalizaCompra()" type="button" class="btn btn-primary btn-block btn-lg mx-auto" disabled>
                                                     Finalizar Pedido
                                                 </button>
                                             </div>
@@ -628,7 +628,7 @@
                                         <form method="post" action="<?php echo base_url('finalizaUnico/cupom') ?>">
                                             <div class="input-group mb-3">
                                                 <input type="text" id="cupom" name="cupom" class="form-control" placeholder="Digite seu cupom">
-                                                <button type="submit" class="g-recaptcha btn btn-primary" data-sitekey="<?php echo $chave['chave_site'] ?>">
+                                                <button type="submit" class="btn btn-primary" data-sitekey="<?php echo $chave['chave_site'] ?>">
                                                     <i class="fa fa-search" aria-hidden="true"></i>
                                                 </button>
                                             </div>

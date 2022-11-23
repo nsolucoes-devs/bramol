@@ -62,7 +62,7 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         text-overflow: ellipsis;
-        height: 3.75rem;
+        height: 1.75rem;
         word-break: break-word;
         font-size: 14px;
         margin-bottom: 10px;
@@ -493,31 +493,28 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
                     </div>
 
                     <div class="row">
-
-                        <?php if ($mobile_view == 0) { ?>
-                            <div class="col-md-2">
-                                <ul class="navbar-nav mr-auto">
-                                    <?php foreach ($departamentos as $dep) {  ?>
-                                        <?php if (array_key_exists('subs', $dep)) { ?>
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" style="color:black !important; font-weight: normal;" href="<?php echo base_url('servico/buscaDepartamento/') . $dep['departamento_id'] ?>" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <?= $dep['departamento'] ?>
-                                                </a>
-                                            <li class="nav-item active">
-                                                <?php foreach ($dep['subs'] as $sub) { ?>
-                                                    <a class="dropdown-item" style="color: black !important; font-weight: normal; text-decoration: none; background-color: transparent;" href="<?php echo base_url('servico/buscaDepartamento/') . $sub['id'] ?>"><?= $sub['nome'] ?></a>
-                                                <?php } ?>
-                                            </li>
-                                        <?php } else { ?>
-                                            <li class="nav-item">
-                                                <a class="nav-link" style="color:black !important; font-weight: normal;" href="<?php echo base_url('servico/buscaDepartamento/') . $dep['departamento_id'] ?>"><?= $dep['departamento'] ?></a>
-                                            </li>
-                                        <?php } ?>
+                        <div class="col-md-2">
+                            <ul class="navbar-nav mr-auto">
+                                <?php foreach ($departamentos as $dep) {  ?>
+                                    <?php if (array_key_exists('subs', $dep)) { ?>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" style="color:black !important; font-weight: normal;" href="<?php echo base_url('servico/buscaDepartamento/') . $dep['departamento_id'] ?>" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <?= $dep['departamento'] ?>
+                                            </a>
+                                        <li class="nav-item active">
+                                            <?php foreach ($dep['subs'] as $sub) { ?>
+                                                <a class="dropdown-item" style="color: black !important; font-weight: normal; text-decoration: none; background-color: transparent;" href="<?php echo base_url('servico/buscaDepartamento/') . $sub['id'] ?>"><?= $sub['nome'] ?></a>
+                                            <?php } ?>
+                                        </li>
+                                    <?php } else { ?>
+                                        <li class="nav-item">
+                                            <a class="nav-link" style="color:black !important; font-weight: normal;" href="<?php echo base_url('servico/buscaDepartamento/') . $dep['departamento_id'] ?>"><?= $dep['departamento'] ?></a>
+                                        </li>
                                     <?php } ?>
-                                </ul>
-                            </div>
-                        <?php } ?>
-                        <?php if ($mobile_view == 0) { ?><div class="col-md-10"><?php } ?>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                        <div class="col-md-10">
                             <div class="row">
                                 <?php if (is_array($servicos)) {
                                     foreach ($servicos as $p) { ?>
@@ -546,9 +543,12 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
 
                                                         <!--<p class="text-center prod-departamento"><span style="font-size: 13px;"><b style="color: #0b193c;"><?php //echo ucfirst(mb_strtolower($aux_nome[0])) 
                                                                                                                                                                 ?></b></span></p>-->
-                                                        <p class="text-center servico-titulo px-4" style="margin-top: 7%; font-weight: 600; color: #0b193c;"><?php echo ucfirst(mb_strtolower($p['servico_nome'])) ?></p>
+                                                        
 
                                                         <div class="row">
+                                                                <div class="col-md-12 col-12 text-center">
+                                                                    <p class="text-center servico-titulo px-4" style="margin-top: 7%; font-weight: 600; color: #0b193c;"><?php echo ucfirst(mb_strtolower($p['servico_nome'])) ?></p>
+                                                                </div>
                                                             <?php if ($p['valor_desconto']) { ?>
                                                                 <div class="col-md-12 col-12 text-center">
                                                                     <span class="old-prod-preco text-muted">R$ <?php echo number_format($p['servico_valor'], 2, ',', '.') ?></span>
@@ -558,9 +558,9 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
                                                                     <?php } ?>
                                                                 </div>
                                                             <?php } else { ?>
-                                                                <div class="col-12 col-md-12 text-center">
+                                                                <div class="col-md-12 text-center">
                                                                     <strike class="old-preco" hidden>text</strike><br>
-                                                                    <p class="text-center prod-preco mx-auto mb-1">R$ <?= number_format($p['servico_valor'], 2, ',', '.') ?></p>
+                                                                    <p class="prod-preco text-center mx-auto">R$ <?= number_format($p['servico_valor'], 2, ',', '.') ?></p>
                                                                     <p class="text-center prod-departamento mb-0 text-muted"><?= $p['servico_qtd_parcela'] ?></p>
                                                                 </div>
                                                             <?php } ?>
@@ -577,8 +577,7 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
                                     </div>
                                 <?php } ?>
                             </div>
-                            <?php if ($mobile_view == 0) { ?>
-                            </div><?php } ?>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 text-center" style="padding-top: 30px!important">

@@ -9,8 +9,8 @@ class PagamentoSTN extends CI_Controller {
         );*/
         
         $dados = array(
-            'api'       => 'ak_live_EJZgDtqsuh0JLP71SFh75Gg6uDP0J5', // Chave V4
-            'crypto'    => 'ek_live_hem64ynpl6EyHMhPndnu1Dl7uhQNMA', // Chave V4 
+            'api'       => '', // Chave V4
+            'crypto'    => '', // Chave V4 
             // 'api'       => 'sk_qMVG9R1CnEs3BNaE',   // Chave V5
             // 'crypto'    => 'pk_r548az8cGFry2EpG',   // Chave V5
         );

@@ -247,7 +247,7 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
         }
 
         .espacamento-icone {
-            margin-right: 15%;
+            margin-right: 5%;
         }
     }
 
@@ -603,14 +603,9 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
 </div>
 </main>
 
-<footer <?php if ($mobile_view == 1) { ?>style="margin-bottom: -5%;" <?php } ?>>
+<footer <?php if ($mobile_view == 1) { ?> style="margin-bottom: -5%;" <?php } ?> >
     <!-- Footer Start-->
     <div id="footer-pc" style="background: #bd3034; width: 100%; padding-top: 3%; background: -webkit-linear-gradient(top, #e02f36, #bd3034, #9d3033, #7a2e31);">
-        <!--ec9706-->
-        <!--<div class="row" style="width: 100%; height: 157px;">-->
-
-        <!--<hr style= "width: 53%; background-color: white; position: relative; bottom: 60px; left: 23%;">-->
-        <!--</div>-->
         <div class="row">
             
             <div class="col-md-6">
@@ -624,25 +619,21 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="row ">
-                    <ul>
-                        <li style="color: white; font-size: 14px; list-style-type: none; font-weight:bold; padding-bottom: 7px;">Conheça nossas redes sociais</li>
-                        <div class="col-4 p-0">
-                            <a href="https://www.facebook.com/Datacomnotebook/?ref=bookmarks" target="_blank">
+                <div class="row justify-content-center">
+                        <h5 style="color: white; font-size: 14px; list-style-type: none; font-weight:bold; padding-bottom: 7px ;">Conheça nossas redes sociais</h5>
+                        <div class="col-4 my-4 p-0" style="margin-left: -30%;">
+                            <a href="https://www.facebook.com/bramoltintaserevestimentos/" target="_blank" style="margin: 5%;">
                                 <i class="social-footer fab fa-facebook" aria-hidden="true" style="color: #ec9706;"></i>
                             </a>
-                        </div>
-                        <div class="col-4 m-auto p-0">
-                            <a href="https://www.instagram.com/datacomnotebook/?hl=pt-br" target="_blank">
+                        
+                            <a href="https://www.instagram.com/bramoltintasoficial/" target="_blank" style="margin: 20%;">
                                 <i class="social-footer fab fa-instagram" aria-hidden="true" style="color: #ec9706;"></i>
                             </a>
-                        </div>
-                        <div class="col-4 p-0 ml-xl-auto">
-                            <a href="#" target="_blank">
+                        
+                            <a href="#" target="_blank" style="margin: 5%;">
                                 <i class="social-footer fab fa-youtube" aria-hidden="true" style="color: #ec9706;"></i>
                             </a>
                         </div>
-                    </ul>
                 </div>                 
             </div>
             <div class="row col-12">
@@ -657,17 +648,13 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
         <!-- <img class="img-fluid" src="imagens/site/footer.jpg"> -->
     </div>
 
-    <?php if ($mobile_view == 1) { ?>
+    <?php if ($mobile_view == 0) { ?>
         <!-- Footer mobile -->
-        <div id="footer-mob" class="row w-100  text-center mx-auto" style="background: #bd3034; margin: 0%; background: -webkit-linear-gradient(top, #e02f36, #bd3034, #0f1f46, #7a2e31); overflow-x: hidden;">
-            <!--b37000-->
+        <div id="footer-mob" class="row w-100  text-center mx-auto" style="background: #bd3034; margin: 0%; background: -webkit-linear-gradient(top, #e02f36, #bd3034, #9d3033, #7a2e31); overflow-x: hidden;">
             <div>
                 <div class="text-center form-group div-logo" style="padding-top: 10%">
-                    <h3 style="color: white; font-size: 30px; list-style-type: none; font-weight:500; padding-bottom: 7px;">
-                        Bramol
-                    </h3>
+                    <img class="logo-img" style="z-index: 40; width: 170px;" src="<?php echo base_url('imagens/site/logo/01.png') ?>" alt="logo" title="Bramol">
                 </div>
-
                 <div class="text-center form-group div-social" style="">
                     <a href="https://www.facebook.com/Datacomnotebook/?ref=bookmarks" class="espacamento-icone" target="_blank">
                         <i class="social-footer fab fa-facebook" aria-hidden="true" style="color: #EC9706; position: relative !important"></i>
@@ -679,10 +666,7 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
 
                     <a href="#" class="espacamento-icone" target="_blank">
                         <i class="social-footer fab fa-youtube" aria-hidden="true" style="color: #EC9706; position: relative !important"></i>
-                    </a>
-                    <!--<a href="#" class="espacamento-icone" target="_blank">-->
-                    <!--    <i class="social-footer fab fa-twitter" aria-hidden="true" style="color: #EC9706; position: relative !important"></i>-->
-                    <!--</a>-->
+                    </a>                    
                 </div>
 
                 <hr style="border-top: 1px solid rgba(256, 256, 256, .1)">
@@ -691,24 +675,6 @@ if ($iphone || $ipad || $android || $palmpre || $ipod || $berry || $symbian == t
                     <li style="color: white; font-size: 14px; list-style-type: none; padding-bottom: 7px;"><i class="fa fa-phone-alt text-primary me-2" style="color: #EC9706!important;"></i> (34) 3336-6226</li>
                     <li style="color: white; font-size: 14px; list-style-type: none; padding-bottom: 7px;"><i class="fas fa-map-marker-alt text-primary me-2" style="color: #EC9706!important;"></i>&nbsp Av. Barão do Rio Branco, 1877 - São Benedito, <br>Uberaba - MG, 38020-300 </li>
                     <li style="color: white; font-size: 14px; list-style-type: none; padding-bottom: 7px;"><i class="fas fa-envelope text-primary me-2" style="color: #EC9706!important;"></i>&nbsp contato@bramol.com.br </li>
-                </div>
-
-                <div class="text-center" style="margin-right: 6%;">
-                    <img src="<?php echo base_url('imagens/site/formaspagamento.png') ?>" class="formas-pagamento-ipad" style="width: 99%; text-align: center; z-index: 101; margin: -15% 4% 0% 4%;">
-                </div>
-
-                <div class="text-center form-group mx-auto" style="display: flex;">
-                    <div style="width: 50%;">
-                        <li style="color: white; font-size: 12px; list-style-type: none; font-weight:bold; padding-bottom: 7px;">Afiliados</li>
-                        <li style="color: white; font-size: 12px; list-style-type: none; padding-bottom: 7px;"><a href="https://datacom.nsolucoes.digital/entrarAfiliado">Login</a></li>
-                        <li style="color: white; font-size: 12px; list-style-type: none; padding-bottom: 7px;"><a href="https://datacom.nsolucoes.digital/cadastroAfiliado">Cadastro</a></li>
-
-                    </div>
-                    <div style="width: 50%;">
-                        <li style="color: white; font-size: 12px; list-style-type: none; font-weight:bold; padding-bottom: 7px;">Sobre</li>
-                        <li style="color: white; font-size: 14px; list-style-type: none; padding-bottom: 7px;"><a style="color: white; cursor: pointer;" data-toggle="modal" data-target="#nossaloja">Nossa Loja</a></li>
-                        <li style="color: white; font-size: 14px; list-style-type: none; padding-bottom: 7px;"><a style="color: white; cursor: pointer;" data-toggle="modal" data-target="#namidia">Na Mídia</a></li>
-                    </div>
                 </div>
                 <hr style="border-top: 1px solid rgba(256, 256, 256, .1); width: 107%;">
                 <div class="<?php if ($tablet == 1) { ?>mb-3<?php } ?>">

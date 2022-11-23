@@ -156,7 +156,7 @@
                             <div class="col-md-5">
 
                                 <div class="col-md-12 text-center form-group" style="margin-top: 10%">
-                                    <img src="<?php echo $site['logo'] ?>" style="height: 90px; width: auto">
+                                    <img src="<?php echo base_url($site['logo']) ?>" style="height: 90px; width: auto">
                                     <div class="col-md-12 text-center">
                                         <br>
                                         <button type="button" class="btn btn-primary" style="width: 200px" onclick="trigger_logo()">Enviar nova Logo Clara</button>
@@ -165,7 +165,7 @@
                                 </div>
 
                                 <div class="col-md-12 text-center form-group" style="margin-top: 10%">
-                                    <img src="<?php echo $site['logo2'] ?>" style="height: 90px; width: auto">
+                                    <img src="<?php echo base_url($site['logo2']) ?>" style="height: 90px; width: auto">
                                     <div class="col-md-12 text-center">
                                         <br>
                                         <button type="button" class="btn btn-primary" style="width: 200px" onclick="$(this).next().click()">Enviar nova logo Escuro</button>
@@ -283,7 +283,7 @@
                                 <div class="col-md-12 form-group">
                                     <!--<h5 class="text-center" style="color: #30b535;">MOBILE </h5><br><br><br>-->
                                     <label><b>Banner 1:</b></label>
-                                    <img src="<?php echo $site['banner_principal1'] ?>" style="width: 200px;">
+                                    <img src="<?php echo base_url($site['banner_principal1'])  ?>" style="width: 200px;">
                                     <div class="col-md-12 text-center">
                                         <button type="button" class="btn btn-primary" style="width: 200px; position: relative; bottom: 120px; right: 20%;" onclick="trigger_principal1()">Banner Carrousel 1</button>
                                         <input type="file" style="display: none" name="banner_principal1" id="banner_principal1" class="input-file">
@@ -297,8 +297,8 @@
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <!--<h5 class="text-center" style="color: #30b535;">MOBILE </h5><br><br><br>-->
-                                    <label><b>Banner 1:</b></label>
-                                    <img src="<?php echo $site['banner_principal2'] ?>" style="width: 200px;">
+                                    <label><b>Banner 2:</b></label>
+                                    <img src="<?php echo base_url($site['banner_principal2']) ?>" style="width: 200px;">
                                     <div class="col-md-12 text-center">
                                         <button type="button" class="btn btn-primary" style="width: 200px; position: relative; bottom: 120px; right: 20%;" onclick="trigger_principal2()">Banner Carrousel 2</button>
                                         <input type="file" style="display: none" name="banner_principal2" id="banner_principal2" class="input-file">
@@ -312,8 +312,8 @@
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <!--<h5 class="text-center" style="color: #30b535;">MOBILE </h5><br><br><br>-->
-                                    <label><b>Banner 1:</b></label>
-                                    <img src="<?php echo $site['banner_principal3'] ?>" style="width: 200px;">
+                                    <label><b>Banner 3:</b></label>
+                                    <img src="<?php echo base_url($site['banner_principal3']) ?>" style="width: 200px;">
                                     <div class="col-md-12 text-center">
                                         <button type="button" class="btn btn-primary" style="width: 200px; position: relative; bottom: 120px; right: 20%;" onclick="trigger_principal3()">Banner Carrousel 3</button>
                                         <input type="file" style="display: none" name="banner_principal3" id="banner_principal3" class="input-file">
@@ -330,7 +330,7 @@
                                 <div class="col-md-12 form-group" style="padding-bottom: 6%; margin: 5%">
                                     <div class="row text-center">
                                         <label><b>Parallax:</b></label>
-                                        <img src="<?php echo $site['parallax'] ?>" style="width: 40%;">
+                                        <img src="<?php echo base_url($site['parallax']) ?>" style="width: 40%;">
                                         <div class="col-md-6 text-center">
                                             <button type="button" class="btn btn-primary" onclick="trigger_parallax()">Parallax</button>
                                             <input type="file" style="display: none" name="parallax" id="parallax" class="input-file">
@@ -341,7 +341,7 @@
                                     <div class="col-md-6 form-group">
                                         <div class="col-md-12 form-group">
                                             <label><b>Imagem 1:</b></label>
-                                            <img src="<?php echo $site['imagem1'] ?>" style="width: 200px;">
+                                            <img src="<?php echo base_url($site['imagem1']) ?>" style="width: 200px;">
                                             <div class="col-md-12 text-center">
                                                 <button type="button" class="btn btn-primary" style="width: 200px; position: relative; bottom: 160px; left: 30%;" onclick="trigger_imagem1()">Imagem banner 1</button>
                                                 <input type="file" style="display: none" name="imagem1" id="imagem1" class="input-file">
@@ -351,7 +351,7 @@
                                         </div>
                                         <div class="col-md-12 form-group" style="position: relative; bottom: 45px">
                                             <label><b>Imagem 2:</b></label>
-                                            <img src="<?php echo $site['imagem2'] ?>" style="width: 200px;">
+                                            <img src="<?php echo base_url($site['imagem2']) ?>" style="width: 200px;">
                                             <div class="col-md-12 text-center">
                                                 <button type="button" class="btn btn-primary" style="width: 200px; position: relative; bottom: 160px; left: 30%;" onclick="trigger_imagem2()">Imagem banner 2</button>
                                                 <input type="file" style="display: none" name="imagem2" id="imagem2" class="input-file">
@@ -361,7 +361,7 @@
                                         </div>
                                         <div class="col-md-12 form-group">
                                             <label><b>Imagem 3:</b></label>
-                                            <img src="<?php echo $site['imagem3'] ?>" style="width: 200px;">
+                                            <img src="<?php echo base_url($site['imagem3']) ?>" style="width: 200px;">
                                             <div class="col-md-12 text-center">
                                                 <button type="button" class="btn btn-primary" style="width: 200px; position: relative; bottom: 160px; left: 30%;" onclick="trigger_imagem3()">Imagem banner 3</button>
                                                 <input type="file" style="display: none" name="imagem3" id="imagem3" class="input-file">
@@ -373,7 +373,7 @@
                                     <div class="col-md-6 form-group">
                                         <div class="col-md-12 form-group">
                                             <label><b>Imagem Full 1:</b></label>
-                                            <img src="<?php echo $site['img_full1'] ?>" style="width: 200px;">
+                                            <img src="<?php echo base_url($site['img_full1']) ?>" style="width: 200px;">
                                             <div class="col-md-12 text-center">
                                                 <button type="button" class="btn btn-primary" style="width: 200px; position: relative; bottom: 30px; left: 30%;" onclick="trigger_img_full1()">Imagem Full 1</button>
                                                 <input type="file" style="display: none" name="img_full1" id="img_full1" class="input-file">
@@ -383,7 +383,7 @@
                                         </div>
                                         <div class="col-md-12 form-group">
                                             <label><b>Imagem Full 2:</b></label>
-                                            <img src="<?php echo $site['img_full2'] ?>" style="width: 200px;">
+                                            <img src="<?php echo base_url($site['img_full2']) ?>" style="width: 200px;">
                                             <div class="col-md-12 text-center">
                                                 <button type="button" class="btn btn-primary" style="width: 200px; position: relative; bottom: 30px; left: 30%;" onclick="trigger_img_full2()">Imagem Full 2</button>
                                                 <input type="file" style="display: none" name="img_full2" id="img_full2" class="input-file">
